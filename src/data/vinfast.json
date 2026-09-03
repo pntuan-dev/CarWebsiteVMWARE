@@ -1,48 +1,94 @@
 {
   "banners": [
     {
-      "id": "b-sinh-nhat",
-      "title": "Mãnh Liệt Tinh Thần Việt Nam",
-      "subtitle": "Tri ân khách hàng nhân dịp Sinh nhật Vingroup",
-      "description": "Ưu đãi đặc quyền lên tới hàng trăm triệu đồng cùng chính sách hỗ trợ lãi suất 0% tối đa 2 năm.",
-      "ctaText": "Khám phá ưu đãi",
-      "ctaLink": "#promotions",
+      "id": "b-vf7",
+      "title": "VinFast VF 7",
+      "subtitle": "Bứt Phá Giới Hạn, Khai Mở Tương Lai",
+      "description": "Thiết kế phi cơ vũ trụ vũ bão, động cơ 349 mã lực và hệ dẫn động 4 bánh toàn thời gian AWD, bứt tốc 0-100 km/h chỉ trong 5.8 giây.",
+      "ctaText": "Khám phá VF 7",
+      "ctaLink": "#cars",
       "secondaryCtaText": "Đặt cọc ngay",
-      "secondaryCtaLink": "#cars",
-      "imageDesktop": "/images/vinfast/banners/banner-sinh-nhat.jpg",
-      "badge": "Đặc biệt"
+      "secondaryCtaLink": "https://shop.vinfastauto.com/vn_vi/dat-coc-vf7.html",
+      "carImage": "/images/vinfast/cars/vf-7.webp",
+      "badge": "C-SUV Thể thao bứt phá",
+      "price": "Từ 850.000.000 VNĐ",
+      "specs": [
+        { "label": "Quãng đường", "value": "431 km" },
+        { "label": "Công suất tối đa", "value": "349 hp" },
+        { "label": "Tăng tốc 0-100", "value": "5.8 giây" }
+      ]
     },
     {
-      "id": "b-vf2",
-      "title": "VinFast VF 2 Mới",
-      "subtitle": "Khởi đầu thông minh cho gia đình trẻ",
-      "description": "Chiếc xe điện nhỏ gọn nhưng tràn ngập công nghệ an toàn, chi phí sử dụng siêu tiết kiệm chỉ bằng 1/3 xe xăng.",
-      "ctaText": "Tìm hiểu VF 2",
+      "id": "b-vf3",
+      "title": "VinFast VF 3",
+      "subtitle": "Sáng Tạo Phong Cách, Dẫn Lối Tương Lai",
+      "description": "Mẫu mini SUV điện nhỏ gọn đầy cá tính, gầm cao 191 mm dễ dàng vượt mọi địa hình đô thị, chi phí lăn bánh cực kỳ hợp lý.",
+      "ctaText": "Khám phá VF 3",
       "ctaLink": "#cars",
-      "secondaryCtaText": "Đăng ký lái thử",
-      "secondaryCtaLink": "#contact",
-      "imageDesktop": "/images/vinfast/banners/banner-vf2.jpg",
-      "badge": "Mới ra mắt"
+      "secondaryCtaText": "Đặt cọc ngay",
+      "secondaryCtaLink": "https://shop.vinfastauto.com/vn_vi/dat-coc-vf3.html",
+      "carImage": "/images/vinfast/cars/vf-3.webp",
+      "badge": "Mẫu xe điện quốc dân",
+      "price": "Từ 240.000.000 VNĐ",
+      "specs": [
+        { "label": "Quãng đường", "value": "215 km" },
+        { "label": "Gầm xe cao", "value": "191 mm" },
+        { "label": "Sạc nhanh 70%", "value": "36 phút" }
+      ]
     },
     {
-      "id": "b-doi-xe",
-      "title": "Chuyển Đổi Xanh Toàn Diện",
-      "subtitle": "Voucher lên đời xe điện tới 80 triệu đồng",
-      "description": "Chính sách thu cũ xe xăng đổi xe điện trợ giá cao nhất thị trường, miễn phí sạc pin tại trạm sạc V-GREEN toàn quốc.",
-      "ctaText": "Chi tiết chương trình",
-      "ctaLink": "#promotions",
-      "imageDesktop": "/images/vinfast/banners/banner-doi-xe.jpg",
-      "badge": "Hot"
-    },
-    {
-      "id": "b-mpv7",
-      "title": "VF MPV 7 & Limo Green",
-      "subtitle": "Đột phá chuẩn mực kinh doanh vận tải & gia đình",
-      "description": "Không gian 7 chỗ rộng rãi tối ưu, hiệu suất vận hành bền bỉ mang lại lợi nhuận kinh doanh tối đa.",
-      "ctaText": "Xem chi tiết",
+      "id": "b-vf9",
+      "title": "VinFast VF 9",
+      "subtitle": "Đẳng Cấp Thủ Lĩnh - E-SUV 7 Chỗ Hạng Sang",
+      "description": "Mẫu E-SUV full-size đỉnh cao với hàng ghế cơ trưởng Captain Seat massage cao cấp, trần kính toàn cảnh và tiêu chuẩn an toàn 5 sao Euro NCAP.",
+      "ctaText": "Khám phá VF 9",
       "ctaLink": "#cars",
-      "imageDesktop": "/images/vinfast/banners/banner-mpv7-limo.jpg",
-      "badge": "Tiên phong"
+      "secondaryCtaText": "Đặt cọc ngay",
+      "secondaryCtaLink": "https://shop.vinfastauto.com/vn_vi/dat-coc-vf9.html",
+      "carImage": "/images/vinfast/cars/vf-9.webp",
+      "badge": "E-SUV Đẳng cấp chủ tịch",
+      "price": "Từ 1.566.000.000 VNĐ",
+      "specs": [
+        { "label": "Quãng đường", "value": "602 km" },
+        { "label": "Công suất tối đa", "value": "402 hp" },
+        { "label": "Cấu hình ghế", "value": "7 chỗ thương gia" }
+      ]
+    },
+    {
+      "id": "b-vf8",
+      "title": "VinFast VF 8",
+      "subtitle": "Đẳng Cấp Doanh Nhân Toàn Cầu",
+      "description": "Dòng D-SUV điện thông minh xuất khẩu toàn cầu, trang bị công nghệ tự lái thông minh ADAS cấp độ cao cùng chính sách bảo hành 10 năm vượt trội.",
+      "ctaText": "Khám phá VF 8",
+      "ctaLink": "#cars",
+      "secondaryCtaText": "Đặt cọc ngay",
+      "secondaryCtaLink": "https://shop.vinfastauto.com/vn_vi/dat-coc-vf8.html",
+      "carImage": "/images/vinfast/cars/vf-8.webp",
+      "badge": "D-SUV Xuất khẩu toàn cầu",
+      "price": "Từ 1.090.000.000 VNĐ",
+      "specs": [
+        { "label": "Quãng đường", "value": "471 km" },
+        { "label": "Công suất tối đa", "value": "402 hp" },
+        { "label": "Túi khí an toàn", "value": "11 túi khí" }
+      ]
+    },
+    {
+      "id": "b-vf6",
+      "title": "VinFast VF 6",
+      "subtitle": "Khởi Tạo Kỷ Nguyên Số - Thiết Kế Torino Ý",
+      "description": "Tuyệt tác thiết kế từ Torino Design nước Ý, không gian nội thất công nghệ cao, trợ lý ảo tiếng Việt tự nhiên và hỗ trợ lái ADAS cho cả gia đình.",
+      "ctaText": "Khám phá VF 6",
+      "ctaLink": "#cars",
+      "secondaryCtaText": "Đặt cọc ngay",
+      "secondaryCtaLink": "https://shop.vinfastauto.com/vn_vi/dat-coc-vf6.html",
+      "carImage": "/images/vinfast/cars/vf-6.webp",
+      "badge": "B-SUV Thời thượng",
+      "price": "Từ 675.000.000 VNĐ",
+      "specs": [
+        { "label": "Quãng đường", "value": "399 km" },
+        { "label": "Công suất tối đa", "value": "201 hp" },
+        { "label": "Màn hình giải trí", "value": "12.9 inch" }
+      ]
     }
   ],
   "cars": [

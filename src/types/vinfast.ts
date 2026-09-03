@@ -41,6 +41,11 @@ export interface IVinFastMotorbike {
   badge?: string;
 }
 
+export interface IBannerSpec {
+  label: string;
+  value: string;
+}
+
 export interface IBannerItem {
   id: string;
   title: string;
@@ -50,8 +55,11 @@ export interface IBannerItem {
   ctaLink: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
-  imageDesktop: string;
+  imageDesktop?: string;
+  carImage: string; // Đường dẫn ảnh xe trực tiếp
   badge?: string;
+  price?: string; // Giá niêm yết
+  specs?: IBannerSpec[]; // Các thông số vàng
 }
 
 export interface IEcosystemItem {
