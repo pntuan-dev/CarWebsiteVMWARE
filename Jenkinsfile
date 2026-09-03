@@ -33,7 +33,7 @@ pipeline {
                 script {
                     echo "Dang deploy len Docker Swarm..."
                     sh """
-                        export DOCKER_USER=${DOCKER_USER}
+                        export APP_IMAGE=${APP_IMAGE}
                         export IMAGE_TAG=${IMAGE_TAG}
                         docker stack deploy -c docker-compose.prod.yml app_stack --with-registry-auth
                     """

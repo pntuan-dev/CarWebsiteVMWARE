@@ -1,24 +1,10 @@
 version: '3.8'
 
 services:
-  frontend:
-    image: ${DOCKER_USER}/my-frontend:${IMAGE_TAG}
+  web:
+    image: ${APP_IMAGE}:${IMAGE_TAG}
     ports:
       - "3000:3000"
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 1
-        delay: 5s
-        order: start-first      # Chạy bản mới trước -> Tắt bản cũ sau (Zero-Downtime)
-        failure_action: rollback # Lỗi thì tự động quay về bản cũ
-      restart_policy:
-        condition: on-failure
-
-  backend:
-    image: ${DOCKER_USER}/my-backend:${IMAGE_TAG}
-    ports:
-      - "5000:5000"
     deploy:
       replicas: 2
       update_config:
