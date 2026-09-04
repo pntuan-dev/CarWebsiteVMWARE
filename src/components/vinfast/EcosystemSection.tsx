@@ -54,7 +54,7 @@ export default function EcosystemSection({ items }: EcosystemSectionProps) {
                 {/* Image Preview */}
                 <div className="relative w-full h-40 bg-slate-950/60 rounded-2xl overflow-hidden mb-6 flex items-center justify-center p-3">
                   <Image
-                    src={item.image}
+                    src={item.imageUrl}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

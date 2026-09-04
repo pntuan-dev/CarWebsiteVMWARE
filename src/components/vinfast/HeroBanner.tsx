@@ -145,8 +145,8 @@ export default function HeroBanner({ banners }: HeroBannerProps) {
               {/* Vehicle Image with Smooth Transitions */}
               <div className="relative w-full h-full transform transition-all duration-700 ease-out hover:scale-105">
                 <Image
-                  key={currentBanner.carImage}
-                  src={currentBanner.carImage}
+                  key={currentBanner.carImageUrl}
+                  src={currentBanner.carImageUrl}
                   alt={currentBanner.title}
                   fill
                   priority

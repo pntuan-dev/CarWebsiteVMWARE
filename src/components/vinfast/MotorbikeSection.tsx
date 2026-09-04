@@ -46,7 +46,7 @@ export default function MotorbikeSection({ motorbikes }: MotorbikeSectionProps) 
                 )}
                 <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-105">
                   <Image
-                    src={bike.image}
+                    src={bike.imageUrl}
                     alt={bike.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
