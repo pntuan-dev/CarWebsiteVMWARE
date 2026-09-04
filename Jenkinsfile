@@ -49,6 +49,8 @@ pipeline {
                     sh """
                         export APP_IMAGE=${APP_IMAGE}
                         export IMAGE_TAG=${IMAGE_TAG}
+                        echo "Kiem tra va tao mang overlay vinfast_net neu chua co..."
+                        docker network inspect vinfast_net >/dev/null 2>&1 || docker network create --driver overlay --attachable vinfast_net
                         docker stack deploy -c docker-compose.prod.yml app_stack --with-registry-auth
                     """
                 }
