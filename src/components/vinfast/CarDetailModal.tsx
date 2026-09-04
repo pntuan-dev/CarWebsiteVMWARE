@@ -55,7 +55,7 @@ export default function CarDetailModal({ car, isOpen, onClose }: CarDetailModalP
           {/* Car Image Preview */}
           <div className="relative w-full h-56 sm:h-72 bg-gradient-to-b from-slate-50 to-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
             <Image
-              src={car.image}
+              src={car.imageUrl}
               alt={car.name}
               fill
               sizes="(max-width: 768px) 100vw, 800px"

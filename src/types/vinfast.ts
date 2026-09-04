@@ -20,10 +20,14 @@ export interface IVinFastCar {
   fastChargingTime: string; // ví dụ: "36 phút (10% - 70%)"
   dimensions: string; // D x R x C (mm)
   wheelbase: string; // mm
-  image: string;
-  badge?: 'Mới' | 'Bán chạy' | 'Hot' | 'Ưu đãi đặc biệt';
+  imageUrl: string; // MinIO URL hoặc CDN
+  badge?: string;
   features: string[];
   depositUrl: string;
+  isActive?: boolean;
+  sortOrder?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IVinFastMotorbike {
@@ -36,9 +40,13 @@ export interface IVinFastMotorbike {
   batteryType: string;
   chargingTime: string;
   trunkCapacity: string;
-  image: string;
+  imageUrl: string; // MinIO URL hoặc CDN
   tagline: string;
   badge?: string;
+  isActive?: boolean;
+  sortOrder?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IBannerSpec {
@@ -55,11 +63,14 @@ export interface IBannerItem {
   ctaLink: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
-  imageDesktop?: string;
-  carImage: string; // Đường dẫn ảnh xe trực tiếp
+  carImageUrl: string; // MinIO URL ảnh xe hiển thị trực tiếp
   badge?: string;
   price?: string; // Giá niêm yết
   specs?: IBannerSpec[]; // Các thông số vàng
+  isActive?: boolean;
+  sortOrder?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IEcosystemItem {
@@ -67,9 +78,13 @@ export interface IEcosystemItem {
   title: string;
   description: string;
   iconName: string;
-  image: string;
+  imageUrl: string; // MinIO URL hoặc CDN
   actionText: string;
   actionLink: string;
+  isActive?: boolean;
+  sortOrder?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IPromotionItem {
@@ -79,6 +94,10 @@ export interface IPromotionItem {
   description: string;
   tag: string;
   validUntil: string;
+  isActive?: boolean;
+  sortOrder?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IVinFastData {
@@ -87,4 +106,15 @@ export interface IVinFastData {
   motorbikes: IVinFastMotorbike[];
   ecosystem: IEcosystemItem[];
   promotions: IPromotionItem[];
+}
+
+export interface ApiResponse<T> {
+  data: T;
+  message?: string;
+}
+
+export interface ApiListResponse<T> {
+  data: T[];
+  total: number;
+  message?: string;
 }

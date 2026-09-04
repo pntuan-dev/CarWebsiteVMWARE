@@ -20,7 +20,12 @@ pipeline {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', "${REGISTRY_CREDS}") {
                         echo "Dang build Docker Image..."
-                        def appImg = docker.build("${APP_IMAGE}:${IMAGE_TAG}", "-f Dockerfile .")
+                        def appImg = docker.build(
+                            "${APP_IMAGE}:${IMAGE_TAG}",
+                            "--build-arg API_BASE_URL=http://car-admin:4000 " +
+                            "--build-arg NEXT_PUBLIC_API_URL=http://192.168.247.130:4000 " +
+                            "-f Dockerfile ."
+                        )
                         appImg.push("${IMAGE_TAG}")
                         appImg.push("latest")
                     }

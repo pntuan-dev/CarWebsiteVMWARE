@@ -86,7 +86,7 @@ export default function CarShowcase({ cars }: CarShowcaseProps) {
 
                 <div className="relative w-full h-full transform transition-transform duration-500 group-hover:scale-105">
                   <Image
-                    src={car.image}
+                    src={car.imageUrl}
                     alt={car.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

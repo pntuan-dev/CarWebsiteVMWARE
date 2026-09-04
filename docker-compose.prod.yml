@@ -1,10 +1,15 @@
 version: '3.8'
 
 services:
-  web:
+  car-landing:
     image: ${APP_IMAGE}:${IMAGE_TAG}
     ports:
       - "3000:3000"
+    environment:
+      # URL nội bộ (server-side fetch trong container)
+      - API_BASE_URL=http://car-admin:4000
+      # URL public (client-side, browser)
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     deploy:
       replicas: 2
       update_config:
@@ -14,3 +19,9 @@ services:
         failure_action: rollback
       restart_policy:
         condition: on-failure
+    networks:
+      - vinfast_net
+
+networks:
+  vinfast_net:
+    external: true
