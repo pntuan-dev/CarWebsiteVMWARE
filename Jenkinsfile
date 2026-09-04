@@ -31,6 +31,15 @@ pipeline {
                     }
                 }
             }
+            post {
+                success {
+                    echo "Build webcardFe thanh cong! Xoa sach Docker build cache de tiet kiem dung luong o cung..."
+                    sh 'docker builder prune -a -f'
+                }
+                failure {
+                    echo "Build webcardFe that bai! Giu nguyen Docker build cache de debug va tan dung lai layer."
+                }
+            }
         }
 
         stage('Deploy Zero-Downtime') {
