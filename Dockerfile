@@ -6,8 +6,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN --mount=type=cache,target=/root/.npm \
-    npm ci
+RUN npm ci
 
 # 2. Rebuild the source code
 FROM base AS builder
@@ -25,8 +24,7 @@ ENV API_BASE_URL=${API_BASE_URL}
 ARG NEXT_PUBLIC_API_URL=http://192.168.247.130:4000
 ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 
-RUN --mount=type=cache,target=/app/.next/cache \
-    npm run build
+RUN npm run build
 
 # 3. Production runner
 FROM base AS runner

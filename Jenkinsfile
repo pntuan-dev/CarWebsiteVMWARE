@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_BUILDKIT = '1'
         DOCKER_USER     = 'tuanphan6511'
         APP_IMAGE       = "${DOCKER_USER}/car-website"
         IMAGE_TAG       = "${BUILD_NUMBER}"
@@ -51,11 +50,11 @@ pipeline {
             }
             post {
                 success {
-                    echo "Build webcardFe thanh cong! Don dep build cache cu (>48h hoac vuot qua 2GB), giu lai layer can thiet..."
-                    sh 'docker builder prune --filter "until=48h" --keep-storage 2GB -f || true'
+                    echo "Build webcardFe thanh cong! Don dep dangling images tranh tran o cung..."
+                    sh 'docker image prune -f || true'
                 }
                 failure {
-                    echo "Build webcardFe that bai! Giu nguyen Docker build cache de debug va tan dung lai layer."
+                    echo "Build webcardFe that bai! Giu nguyen Docker cache de debug va tan dung lai layer."
                 }
             }
         }
