@@ -11,11 +11,11 @@ services:
       # URL public (client-side, browser)
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 5s
-        order: start-first
+        order: stop-first
         failure_action: rollback
       restart_policy:
         condition: on-failure
