@@ -74,6 +74,9 @@ pipeline {
                         echo "Xoa service cu (app_stack_web) con chiem port 3000 neu ton tai..."
                         docker service rm app_stack_web 2>/dev/null || true
 
+                        echo "Gioi han task history cua Docker Swarm..."
+                        docker swarm update --task-history-limit 1 2>/dev/null || true
+
                         echo "Doi 8 giay de port 3000 duoc giai phong hoan toan..."
                         sleep 8
 
@@ -83,9 +86,15 @@ pipeline {
             }
         }
 
-        stage('Clean Old Images') {
+        stage('Clean Old Containers & Images') {
             steps {
-                sh 'docker image prune -f'
+                script {
+                    echo "Don dep container va image cu..."
+                    sh """
+                        docker container prune -f
+                        docker image prune -f
+                    """
+                }
             }
         }
     }
@@ -93,6 +102,7 @@ pipeline {
     post {
         success {
             echo "Deploy thanh cong!"
+            sh 'docker container prune -f && docker image prune -f'
         }
         failure {
             echo "Deploy that bai! Kiem tra lai log."
