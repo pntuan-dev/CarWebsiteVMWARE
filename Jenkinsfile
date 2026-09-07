@@ -15,6 +15,23 @@ pipeline {
             }
         }
 
+        stage('Prepare Environment') {
+            steps {
+                script {
+                    echo "Chuan bi file cau hinh moi truong Production cho VPS..."
+                    sh """
+                        if [ -f env.production ]; then
+                            cp env.production .env.local
+                            echo "Da copy env.production -> .env.local thanh cong."
+                        else
+                            echo "CANH BAO: Khong tim thay file env.production!"
+                            exit 1
+                        fi
+                    """
+                }
+            }
+        }
+
         stage('Build & Push Docker Image') {
             steps {
                 script {
@@ -49,8 +66,17 @@ pipeline {
                     sh """
                         export APP_IMAGE=${APP_IMAGE}
                         export IMAGE_TAG=${IMAGE_TAG}
+                        export NEXT_PUBLIC_API_URL=http://192.168.247.130:4000
+
                         echo "Kiem tra va tao mang overlay vinfast_net neu chua co..."
                         docker network inspect vinfast_net >/dev/null 2>&1 || docker network create --driver overlay --attachable vinfast_net
+
+                        echo "Xoa service cu (app_stack_web) con chiem port 3000 neu ton tai..."
+                        docker service rm app_stack_web 2>/dev/null || true
+
+                        echo "Doi 8 giay de port 3000 duoc giai phong hoan toan..."
+                        sleep 8
+
                         docker stack deploy -c docker-compose.prod.yml app_stack --with-registry-auth
                     """
                 }
